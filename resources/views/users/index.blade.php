@@ -50,6 +50,7 @@
                                 <div class="mt-4">
                                     {{ $users->links() }}
                                 </div>
+                                <a class="text-xl mb-4" href="{{ route('download-pdf') }}">Export to PDF</a>
                             </div>
                         </div>
                     </div>
