@@ -52,7 +52,7 @@
                                                     {{ $vehicle->odometer }}
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium">
-                                                    <a href="" class="text-indigo-600 hover:text-indigo-900">TO-DO</a>
+                                                    <a href="{{ route('vehicles.show', $vehicle->id) }}" class="text-indigo-600 hover:text-indigo-900">Details</a>
                                                 </td>
                                                 @if(Auth::user() != NULL)
                                                     @if(Auth::user()->id == $vehicle->owner_id)
