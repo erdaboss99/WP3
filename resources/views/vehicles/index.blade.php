@@ -57,11 +57,11 @@
                                                 @if(Auth::user() != NULL)
                                                     @if(Auth::user()->id == $vehicle->owner_id)
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium">
-                                                            <a href="" class="text-indigo-600 hover:text-indigo-900">TO-DO</a>
+                                                            <a href="{{ route('vehicles.edit', $vehicle->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                                         </td>
                                                     @else
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium">
-                                                            TO-DO
+                                                            Not your property!
                                                         </td>
                                                     @endif
                                                     @if (Auth::user()->id == $vehicle->owner_id || Auth::user()->access_level == 1)

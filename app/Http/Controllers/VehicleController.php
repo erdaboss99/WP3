@@ -39,13 +39,13 @@ class VehicleController extends Controller
 
     public function edit(Vehicle $vehicle)
     {
-        //TO-DO
+        return view('vehicles.edit', compact('vehicle'));
     }
 
     public function update(UpdateVehicleRequest $request, Vehicle $vehicle)
     {
-        //TO-DO
-
+        $vehicle->update($request->all());
+        return redirect()->route('vehicles.index')->with('message', 'Vehicle updated successfully!');
     }
 
     public function destroy(Vehicle $vehicle)
