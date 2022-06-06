@@ -13,17 +13,23 @@ class VehicleController extends Controller
     {
         $vehicles = Vehicle::paginate();
         return view('vehicles.index', compact('vehicles'));
-
     }
 
     public function create()
     {
-        //TO-DO
+        return view('vehicles.create');
     }
 
     public function store(StoreVehicleRequest $request)
     {
-        //TO-DO
+        Vehicle::create([
+            'brand' => $request->brand,
+            'model' => $request->model,
+            'odometer' => $request->odometer,
+            'fuel_type' => $request->fuel_type,
+            'owner_id' => Auth()->user()->id
+        ]);
+        return redirect()->route('vehicles.index')->with('message', 'Vehicle created successfully!');
     }
 
     public function show(Vehicle $vehicle)
