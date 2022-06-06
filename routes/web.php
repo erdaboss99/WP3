@@ -12,6 +12,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 //Admin logged in
 Route::group(['middleware' => 'admin'], function() {
+    Route::resource('users', \App\Http\Controllers\UserController::class);
 });
 
 require __DIR__.'/auth.php';

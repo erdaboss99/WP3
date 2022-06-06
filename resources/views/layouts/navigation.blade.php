@@ -16,8 +16,11 @@
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
-                        <!-- Admin logged in -->
                         @if (Auth::user()->access_level === '1')
+                            <!-- Admin logged in -->
+                            <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                                {{ __('Users') }}
+                            </x-nav-link>
                         @endif
                     @else
                         <!-- User not logged in -->
@@ -82,6 +85,9 @@
                 </x-responsive-nav-link>
                 @if (Auth::user()->access_level === '1')
                     <!-- Admin logged in -->
+                    <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                        {{ __('Users') }}
+                    </x-responsive-nav-link>
                 @endif
             @else
                 <!-- User not logged in -->
