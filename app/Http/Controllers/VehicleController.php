@@ -11,7 +11,9 @@ class VehicleController extends Controller
 
     public function index()
     {
-        //TO-DO
+        $vehicles = Vehicle::paginate();
+        return view('vehicles.index', compact('vehicles'));
+
     }
 
     public function create()

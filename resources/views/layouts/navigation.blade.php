@@ -16,6 +16,9 @@
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('vehicles.index')" :active="request()->routeIs('vehicles.index')">
+                            {{ __('Vehicles') }}
+                        </x-nav-link>
                         @if (Auth::user()->access_level === '1')
                             <!-- Admin logged in -->
                             <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
@@ -29,6 +32,9 @@
                         </x-nav-link>
                         <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
                             {{ __('Register') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('vehicles.index')" :active="request()->routeIs('vehicles.index')">
+                            {{ __('Vehicles') }}
                         </x-nav-link>
                     @endif
                 </div>
@@ -86,6 +92,9 @@
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('vehicles.index')" :active="request()->routeIs('vehicles.index')">
+                    {{ __('Vehicles') }}
+                </x-responsive-nav-link>
                 @if (Auth::user()->access_level === '1')
                     <!-- Admin logged in -->
                     <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
@@ -99,6 +108,9 @@
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('register')">
                     {{ __('Register') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('vehicles.index')" :active="request()->routeIs('vehicles.index')">
+                    {{ __('Vehicles') }}
                 </x-responsive-nav-link>
             @endif
         </div>

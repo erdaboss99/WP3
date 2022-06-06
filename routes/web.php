@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 //User logged out
 Route::get('/', function () { return view('welcome');});
+Route::resource('vehicles', \App\Http\Controllers\VehicleController::class);
+
 
 //User logged in
 Route::group(['middleware' => 'auth'], function() {
