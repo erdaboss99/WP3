@@ -65,12 +65,16 @@
                                                         </td>
                                                     @endif
                                                     @if (Auth::user()->id == $vehicle->owner_id || Auth::user()->access_level == 1)
-                                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium">
-                                                                <input type="submit" value="TO-DO" title="delete" class="text-indigo-600 hover:text-indigo-900">
-                                                            </td>
+                                                            <form action="{{ route('vehicles.destroy', $vehicle->id) }}" method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium">
+                                                                    <input type="submit" value="Delete" title="delete" class="text-indigo-600 hover:text-indigo-900">
+                                                                </td>
+                                                            </form>
                                                     @else
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium">
-                                                            TO-DO
+                                                            Not your property!
                                                         </td>
                                                     @endif
                                                 @endif

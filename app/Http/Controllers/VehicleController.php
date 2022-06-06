@@ -50,6 +50,7 @@ class VehicleController extends Controller
 
     public function destroy(Vehicle $vehicle)
     {
-        //TO-DO
+        $vehicle->delete();
+        return redirect()->route('vehicles.index')->with('message', 'Vehicle deleted successfully!');
     }
 }
