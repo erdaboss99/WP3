@@ -26,6 +26,9 @@
                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 Odometer(KM)
                                             </th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Fuel type
+                                            </th>
                                             <th scope="col" class="relative px-6 py-3">
                                                 <span class="sr-only">More details</span>
                                             </th>
@@ -50,6 +53,15 @@
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                     {{ $vehicle->odometer }}
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    @if ($vehicle->fuel_type == 0)
+                                                        Petrol
+                                                    @elseif ($vehicle->fuel_type == 1)
+                                                        Diesel
+                                                    @else
+                                                        Electric
+                                                    @endif
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-medium">
                                                     <a href="{{ route('vehicles.show', $vehicle->id) }}" class="text-indigo-600 hover:text-indigo-900">Details</a>

@@ -26,6 +26,17 @@
                         <td>{{ $vehicle->odometer.' KM' }}</td>
                     </tr>
                     <tr>
+                        <td class="px-4 py-2 font-bold">Fuel type</td>
+                        <td>
+                            @if ($vehicle->fuel_type == 0)
+                                Petrol
+                            @elseif ($vehicle->fuel_type == 1)
+                                Diesel
+                            @else
+                                Electric
+                            @endif</td>
+                    </tr>
+                    <tr>
                         <td class="px-4 py-2 font-bold">Updated on</td>
                         <td>{{ date_format($vehicle->updated_at, 'jS F Y g:i A') }}</td>
                     </tr>
