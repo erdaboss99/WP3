@@ -22,6 +22,9 @@
                         <x-nav-link :href="route('vehicles.create')" :active="request()->routeIs('vehicles.create')">
                             {{ __('New vehicle') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('sales.index')" :active="request()->routeIs('sales.index')">
+                            {{ __('Marketplace') }}
+                        </x-nav-link>
                         @if (Auth::user()->access_level === '1')
                             <!-- Admin logged in -->
                             <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
@@ -100,6 +103,9 @@
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('vehicles.create')" :active="request()->routeIs('vehicles.create')">
                     {{ __('New vehicle') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('sales.index')" :active="request()->routeIs('sales.index')">
+                    {{ __('Marketplace') }}
                 </x-responsive-nav-link>
                 @if (Auth::user()->access_level === '1')
                     <!-- Admin logged in -->
