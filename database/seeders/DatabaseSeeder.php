@@ -38,6 +38,21 @@ class DatabaseSeeder extends Seeder
             'fuel_type' => '1',
             'owner_id' => '3',
         ]);
+        \App\Models\Sale::factory()->create([
+            'user_id' => '1',
+            'vehicle_id' => '1',
+            'price' => '30000000',
+        ]);
+        \App\Models\Sale::factory()->create([
+            'user_id' => '2',
+            'vehicle_id' => '2',
+            'price' => '20000000',
+        ]);
+        \App\Models\Sale::factory()->create([
+            'user_id' => '3',
+            'vehicle_id' => '3',
+            'price' => '25000000',
+        ]);
         $this->call(UserSeeder::class);
     }
 }
