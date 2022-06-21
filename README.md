@@ -1,1 +1,1 @@
-This assignment is made for "AWebprogramozás III. gy." course.
+This assignment is made for "Webprogramozás III. gy." course.
